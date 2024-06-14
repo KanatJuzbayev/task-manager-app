@@ -1,14 +1,19 @@
 import React from "react";
 import "./App.css";
+import Navbar from "./components/Navbar";
+import HomePage from "./components/HomePage";
 
-function App() {
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>Hi, it's Task Manajer!</p>
-      </header>
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
